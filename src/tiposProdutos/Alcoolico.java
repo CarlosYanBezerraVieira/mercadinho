@@ -8,4 +8,10 @@ public class Alcoolico extends Produto {
         super(nome, preco);
     }
 
+    @Override
+    public double calcularImpoosto() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'calcularImpoosto'");
+    }
+
 }

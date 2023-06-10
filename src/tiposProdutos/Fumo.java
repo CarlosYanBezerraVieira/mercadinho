@@ -8,4 +8,10 @@ public class Fumo extends Produto {
         super(nome, preco);
     }
 
+    @Override
+    public double calcularImpoosto() {
+
+        throw new UnsupportedOperationException("Unimplemented method 'calcularImpoosto'");
+    }
+
 }

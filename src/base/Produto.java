@@ -24,4 +24,6 @@ public abstract class Produto {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public abstract double calcularImpoosto();
 }
