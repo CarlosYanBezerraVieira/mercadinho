@@ -17,13 +17,13 @@ public class Caixa {
 
     public void totalDaCompra() {
         double valorBruto = carinho.valorBruto();
-        double valorDesconto = calcularDesconto(valorBruto);
+        double valorDesconto = calcularDescontoDisponiveis(valorBruto);
         double valorTotal = valorBruto - valorDesconto;
         System.out.println("O total é de: " + valorTotal);
 
     }
 
-    private double calcularDesconto(double valorBruto) {
+    private double calcularDescontoDisponiveis(double valorBruto) {
         Desconto desconto = new DescontoPorPagamentoAVista(new DescontoPorDia(new SemDesconto()));
         return desconto.calcularDesconto(carinho, formaPagamento);
 
