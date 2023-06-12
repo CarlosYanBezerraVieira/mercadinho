@@ -10,13 +10,8 @@ public class Alcoolico extends Produto {
     }
 
     @Override
-    public double calcularImposto() {
-        return getPreco() * 0.05; // Imposto de 5% para produtos alcoólicos
-    }
-
-    @Override
-    public void accept(ImpostoVisitor visitor) {
-        visitor.visit(this);
+    public double calcularImposto(ImpostoVisitor visitor) {
+        return visitor.visit(this);
 
     }
 }

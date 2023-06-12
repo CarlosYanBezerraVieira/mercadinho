@@ -25,7 +25,7 @@ public abstract class Produto {
         this.nome = nome;
     }
 
-    public abstract double calcularImposto();
+    public abstract double calcularImposto(ImpostoVisitor visitor);
 
-    public abstract void accept(ImpostoVisitor visitor);
+  
 }

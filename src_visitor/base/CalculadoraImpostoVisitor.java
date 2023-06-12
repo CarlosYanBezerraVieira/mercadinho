@@ -12,17 +12,24 @@ public class CalculadoraImpostoVisitor extends ImpostoVisitor {
     }
 
     @Override
-    public void visit(Alcoolico alcoolico) {
-        impostoTotal += alcoolico.calcularImposto();
+    public double visit(Alcoolico alcoolico) {
+        double impostoAlcoolico = alcoolico.getPreco() * 0.05; // Imposto de 5% para produtos alcoólicos
+        impostoTotal += impostoAlcoolico;
+        return impostoAlcoolico;
     }
 
     @Override
-    public void visit(Alimento alimento) {
-        impostoTotal += alimento.calcularImposto();
+    public double visit(Alimento alimento) {
+        double impostoAlimento = alimento.getPreco() * 0.03; // Imposto de 5% para produtos alcoólicos
+        impostoTotal += impostoAlimento;
+        return impostoAlimento;
+
     }
 
     @Override
-    public void visit(Fumo fumo) {
-        impostoTotal += fumo.calcularImposto();
+    public double visit(Fumo fumo) {
+        double impostoFumo = fumo.getPreco() * 0.07; // Imposto de 5% para produtos alcoólicos
+        impostoTotal += impostoFumo;
+        return impostoFumo;
     }
 }

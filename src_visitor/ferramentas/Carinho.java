@@ -27,7 +27,7 @@ public class Carinho {
 
     public void accept(ImpostoVisitor visitor) {
         for (Produto produto : items) {
-            produto.accept(visitor);
+            produto.calcularImposto(visitor);
         }
     }
 
