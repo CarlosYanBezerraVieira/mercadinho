@@ -1,6 +1,6 @@
 package ferramentas;
 
-import base.CalculadoraImpostoVisitor;
+import base.CalculadoraImpostoVisitorBR;
 import base.Desconto;
 import base.ImpostoVisitor;
 import base.Produto;
@@ -23,9 +23,9 @@ public class Caixa {
         double valorDesconto = calcularDescontoDisponiveis(valorBruto);
 
         // cálculo imposto
-        ImpostoVisitor visitor = new CalculadoraImpostoVisitor();
+        ImpostoVisitor visitor = new CalculadoraImpostoVisitorBR();
         carinho.accept(visitor);
-        double impostoTotal = ((CalculadoraImpostoVisitor) visitor).getImpostoTotal();
+        double impostoTotal = ((CalculadoraImpostoVisitorBR) visitor).getImpostoTotal();
 
         double total = valorBruto - valorDesconto + impostoTotal;
 
