@@ -1,5 +1,9 @@
 package ferramentas;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+
 import base.CalculadoraImpostoVisitorBR;
 import base.Desconto;
 import base.ImpostoVisitor;
@@ -30,10 +34,10 @@ public class Caixa {
         double total = valorBruto - valorDesconto + impostoTotal;
 
         // arredondando
-        valorBruto = Math.round(valorBruto * 100.0) / 100.0;
-        valorDesconto = Math.round(valorDesconto * 100.0) / 100.0;
-        impostoTotal = Math.round(impostoTotal * 100.0) / 100.0;
-        total = Math.round(total * 100.0) / 100.0;
+        valorBruto = formatNumber(valorBruto);
+        valorDesconto = formatNumber(valorDesconto);
+        impostoTotal = formatNumber(impostoTotal);
+        total = formatNumber(total);
 
         System.out.println("Produtos:");
         for (Produto produto : carinho.getProdutos()) {
@@ -50,4 +54,19 @@ public class Caixa {
         Desconto desconto = new DescontoPorPagamentoAVista(new DescontoPorDia(new SemDesconto()));
         return desconto.calcularDesconto(carinho, formaPagamento);
     }
+
+    private double formatNumber(double valor) {
+
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.US);
+        symbols.setDecimalSeparator('.');
+        symbols.setGroupingSeparator(',');
+
+        DecimalFormat df = new DecimalFormat("#.00", symbols);
+        df.setRoundingMode(java.math.RoundingMode.DOWN);
+        String valorFormatado = df.format(valor);
+        System.out.println(valorFormatado);
+        double valorArredondado = Double.parseDouble(valorFormatado);
+        return valorArredondado;
+    }
+
 }
