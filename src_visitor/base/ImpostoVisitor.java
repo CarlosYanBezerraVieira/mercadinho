@@ -5,9 +5,9 @@ import tiposProdutos.Alimento;
 import tiposProdutos.Fumo;
 
 public abstract class ImpostoVisitor {
-    public abstract double visit(Alcoolico alcoolico);
+    public abstract double visitAlcoolico(Alcoolico alcoolico);
 
-    public abstract double visit(Alimento alimento);
+    public abstract double visitAlimento(Alimento alimento);
 
-    public abstract double visit(Fumo fumo);
+    public abstract double visitFumo(Fumo fumo);
 }

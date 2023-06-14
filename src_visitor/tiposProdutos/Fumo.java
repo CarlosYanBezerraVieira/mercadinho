@@ -11,6 +11,6 @@ public class Fumo extends Produto {
 
     @Override
     public double calcularImposto(ImpostoVisitor visitor) {
-        return visitor.visit(this);
+        return visitor.visitFumo(this);
     }
 }

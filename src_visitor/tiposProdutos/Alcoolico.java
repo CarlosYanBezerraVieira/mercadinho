@@ -11,7 +11,7 @@ public class Alcoolico extends Produto {
 
     @Override
     public double calcularImposto(ImpostoVisitor visitor) {
-        return visitor.visit(this);
+        return visitor.visitAlcoolico(this);
 
     }
 }
