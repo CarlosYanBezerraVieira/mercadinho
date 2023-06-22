@@ -1,5 +1,6 @@
 package tiposProdutos;
 
+import base.ImpostoVisitor;
 import base.Produto;
 
 public class Alimento extends Produto {
@@ -9,9 +10,7 @@ public class Alimento extends Produto {
     }
 
     @Override
-    public double calcularImpoosto() {
-
-        throw new UnsupportedOperationException("Unimplemented method 'calcularImpoosto'");
+    public double calcularImposto(ImpostoVisitor visitor) {
+        return visitor.visitAlimento(this);
     }
-
 }

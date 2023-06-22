@@ -12,9 +12,9 @@ import tiposProdutos.Fumo;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Alimento arroz = new Alimento("Arroz", 4);
-        Alcoolico cerveja = new Alcoolico("cerveja", 3);
-        Fumo cigarro = new Fumo("cigarro", 7);
+        Alimento arroz = new Alimento("Arroz", 7);
+        Alcoolico cerveja = new Alcoolico("cerveja", 6);
+        Fumo cigarro = new Fumo("cigarro", 4);
 
         List<Produto> produtos = new ArrayList<Produto>();
 
@@ -24,7 +24,7 @@ public class App {
 
         Carinho carrinho = new Carinho(produtos);
 
-        Caixa caixa = new Caixa(TiposPagamento.CARTAO_CREDITO, carrinho);
+        Caixa caixa = new Caixa(TiposPagamento.PIX, carrinho);
 
         caixa.totalDaCompra();
 
