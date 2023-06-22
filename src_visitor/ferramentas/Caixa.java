@@ -64,7 +64,6 @@ public class Caixa {
         DecimalFormat df = new DecimalFormat("#.00", symbols);
         df.setRoundingMode(java.math.RoundingMode.DOWN);
         String valorFormatado = df.format(valor);
-        System.out.println(valorFormatado);
         double valorArredondado = Double.parseDouble(valorFormatado);
         return valorArredondado;
     }
